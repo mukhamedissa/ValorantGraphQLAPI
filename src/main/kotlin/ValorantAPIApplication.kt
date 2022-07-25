@@ -1,4 +1,6 @@
 import data.routing.getAccountDetails
+import data.routing.getPlayerMatches
+import di.clientDataModule
 import di.clientNetworkModule
 import io.ktor.server.application.*
 import io.ktor.server.netty.*
@@ -9,13 +11,14 @@ import org.koin.ktor.plugin.Koin
 fun Application.main() {
     install(StatusPages)
     install(Koin) {
-        modules(listOf(clientNetworkModule))
+        modules(listOf(clientNetworkModule, clientDataModule))
     }
 }
 
 fun Application.module() {
     routing {
         getAccountDetails()
+        getPlayerMatches()
     }
 }
 

@@ -1,6 +1,6 @@
 package data.repository
 
-import data.model.AccountResponse
+import data.model.account.AccountResponse
 import data.api.ValorantApi
 
 interface AccountRepository {

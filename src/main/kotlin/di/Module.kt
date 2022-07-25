@@ -4,6 +4,8 @@ import data.api.ValorantApi
 import data.api.ValorantApiImpl
 import data.repository.AccountRepository
 import data.repository.AccountRepositoryImpl
+import data.repository.MatchRepository
+import data.repository.MatchRepositoryImpl
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
 import io.ktor.client.plugins.*
@@ -21,6 +23,8 @@ val clientNetworkModule = module {
     single {
         Json {
             ignoreUnknownKeys = true
+            explicitNulls = false
+            coerceInputValues = true
         }
     }
     single {
@@ -42,8 +46,13 @@ val clientNetworkModule = module {
     single<ValorantApi> {
         ValorantApiImpl(get())
     }
+}
 
+val clientDataModule = module {
     factory<AccountRepository> {
         AccountRepositoryImpl(get())
+    }
+    factory<MatchRepository> {
+        MatchRepositoryImpl(get())
     }
 }
