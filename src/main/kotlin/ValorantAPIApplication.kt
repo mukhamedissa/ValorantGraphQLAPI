@@ -1,4 +1,5 @@
 import data.routing.getAccountDetails
+import data.routing.getMatchDetails
 import data.routing.getPlayerMatches
 import di.clientDataModule
 import di.clientNetworkModule
@@ -19,6 +20,7 @@ fun Application.module() {
     routing {
         getAccountDetails()
         getPlayerMatches()
+        getMatchDetails()
     }
 }
 

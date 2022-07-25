@@ -33,3 +33,15 @@ fun Routing.getPlayerMatches() {
         }
     }
 }
+
+fun Routing.getMatchDetails() {
+    val repository: MatchRepository by inject()
+
+    get("match/{match_id}") {
+        val matchId = call.parameters["match_id"] ?: return@get
+
+        repository.getMatchDetails(matchId).getOrNull()?.let { matchResponse ->
+            call.respond(matchResponse.toString())
+        }
+    }
+}

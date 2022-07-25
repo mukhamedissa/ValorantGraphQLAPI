@@ -1,6 +1,7 @@
 package data.api
 
 import data.model.account.AccountResponse
+import data.model.match.MatchResponse
 import data.model.match.MatchesResponse
 import io.ktor.client.*
 import io.ktor.client.call.*
@@ -18,6 +19,10 @@ interface ValorantApi {
         username: String,
         tag: String
     ): MatchesResponse
+
+    suspend fun getMatchDetails(
+        matchId: String
+    ): MatchResponse
 }
 
 class ValorantApiImpl(
@@ -44,6 +49,16 @@ class ValorantApiImpl(
             url {
                 path(MATCHES_PATH)
                 appendPathSegments(region, username, tag)
+            }
+        }.body()
+
+    override suspend fun getMatchDetails(
+        matchId: String
+    ): MatchResponse =
+        client.get {
+            url {
+                path(MATCH_PATH)
+                appendPathSegments(matchId)
             }
         }.body()
 }
