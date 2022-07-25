@@ -10,7 +10,7 @@ Valorant GraphQL API Wrapper for [https://github.com/Henrik-3/unofficial-valoran
 
 Covered API requests:
 
--   [ ]  `Account (name, tag)`
+-   [ ]  `Account(name, tag)`
 -   [ ]  `Matches(region, name, tag)`
 -   [ ]  `Match(match_id)`
 -   [ ]  `Leaderboard(version, region)`
