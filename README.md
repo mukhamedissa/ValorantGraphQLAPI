@@ -1,4 +1,4 @@
-# ValorantGraphQLAPI
+# Valorant GraphQL API Wrapper
 
 **In development**
 
