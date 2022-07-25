@@ -13,6 +13,8 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-server-status-pages:2.0.3")
+
     implementation("io.ktor:ktor-client-core:2.0.3")
     implementation("io.ktor:ktor-client-cio:2.0.3")
     implementation("io.ktor:ktor-client-logging:2.0.3")
@@ -26,6 +28,10 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation:2.0.3")
 
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.0.3")
+
+    implementation("io.insert-koin:koin-ktor:3.2.0")
+
+    implementation("org.slf4j:slf4j-log4j12:1.7.36")
 
     testImplementation(kotlin("test"))
 }

@@ -1,12 +1,12 @@
-package data
+package data.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class AccountResponse(
-    val status: Int,
-    val data: AccountData
+    @SerialName("status") val status: Int,
+    @SerialName("data") val data: AccountData
 )
 
 @Serializable
