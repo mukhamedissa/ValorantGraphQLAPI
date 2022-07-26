@@ -7,6 +7,7 @@ Valorant GraphQL API Wrapper for [https://github.com/Henrik-3/unofficial-valoran
  - Kotlin
  - Ktor framework
  - Koin for dependency injection
+ - [KGraphQL](https://github.com/apurebase/kgraphql/) for GraphQL
 
 Covered API requests:
 
