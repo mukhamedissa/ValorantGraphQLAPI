@@ -44,9 +44,8 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
-tasks.compileKotlin {
-    sourceCompatibility = JavaVersion.VERSION_1_8.toString()
-    targetCompatibility = JavaVersion.VERSION_1_8.toString()
+tasks.withType<KotlinCompile> {
+    kotlinOptions.jvmTarget = "11"
 }
 
 tasks.test {
