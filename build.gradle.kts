@@ -3,10 +3,15 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.serialization") version "1.6.21"
+    application
 }
 
 group = "com.devsapiens"
 version = "1.0-SNAPSHOT"
+
+application {
+    mainClass.set("ValorantAPIApplication")
+}
 
 repositories {
     mavenCentral()
@@ -45,4 +50,8 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks {
+    create("stage").dependsOn("installDist")
 }
